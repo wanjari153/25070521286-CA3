@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Task<span>Flow</span></h1>
+    <div class="user-area">
+      <span id="welcome"></span>
+      <button id="logoutBtn" class="ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="stats">
+      <div class="stat"><h2 id="statTotal">0</h2><p>Total</p></div>
+      <div class="stat green"><h2 id="statDone">0</h2><p>Completed</p></div>
+      <div class="stat orange"><h2 id="statPending">0</h2><p>Pending</p></div>
+      <div class="stat red"><h2 id="statOverdue">0</h2><p>Overdue</p></div>
+    </section>
+
+    <section class="card">
+      <h3 id="formTitle">Add a new task</h3>
+      <form id="taskForm" class="task-form">
+        <input type="text" id="title" placeholder="Task title *" required />
+        <input type="text" id="description" placeholder="Description (optional)" />
+        <select id="priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <input type="text" id="category" placeholder="Category (e.g. Work)" />
+        <input type="date" id="dueDate" />
+        <div class="form-buttons">
+          <button type="submit" id="saveBtn" class="primary">Add task</button>
+          <button type="button" id="cancelBtn" class="ghost hidden">Cancel edit</button>
+        </div>
+      </form>
+      <p id="formError" class="message"></p>
+    </section>
+
+    <section class="card">
+      <div class="filters">
+        <input type="text" id="search" placeholder="Search tasks..." />
+        <select id="filterStatus">
+          <option value="">All tasks</option>
+          <option value="pending">Pending</option>
+          <option value="done">Completed</option>
+        </select>
+        <select id="filterPriority">
+          <option value="">Any priority</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <ul id="taskList"></ul>
+      <p id="empty" class="empty hidden">No tasks found.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

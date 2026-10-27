@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow - Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-card">
+    <h1>Task<span>Flow</span></h1>
+    <p class="subtitle">Organize your work, one task at a time.</p>
+
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Login</button>
+      <button id="registerTab" class="tab">Register</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+    <form id="authForm">
+      <input type="text" id="name" placeholder="Full name" class="hidden" />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password (min 6 characters)" required />
+      <button type="submit" id="submitBtn" class="primary">Login</button>
+    </form>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>
